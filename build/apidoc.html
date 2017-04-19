@@ -1,0 +1,3705 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/ruipgil/scraperjs"
+
+    >scraperjs (v1.2.0)</a>
+</h1>
+<h4>A complete and versatile web scraper.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs">module scraperjs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper">
+            function <span class="apidocSignatureSpan">scraperjs.</span>AbstractScraper
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper">
+            function <span class="apidocSignatureSpan">scraperjs.</span>DynamicScraper
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll">
+            function <span class="apidocSignatureSpan">scraperjs.</span>PhantomPoll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router">
+            function <span class="apidocSignatureSpan">scraperjs.</span>Router
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperError">
+            function <span class="apidocSignatureSpan">scraperjs.</span>ScraperError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise">
+            function <span class="apidocSignatureSpan">scraperjs.</span>ScraperPromise
+            <span class="apidocSignatureSpan">(scraper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.StaticScraper">
+            function <span class="apidocSignatureSpan">scraperjs.</span>StaticScraper
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>AbstractScraper.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>DynamicScraper.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>PhantomPoll.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>Router.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>Scraper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>ScraperError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>ScraperPromise.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scraperjs.</span>StaticScraper.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.AbstractScraper">module scraperjs.AbstractScraper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.AbstractScraper">
+            function <span class="apidocSignatureSpan">scraperjs.</span>AbstractScraper
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.create">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.</span>create
+            <span class="apidocSignatureSpan">(ScraperType, url, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.AbstractScraper.prototype">module scraperjs.AbstractScraper.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.clone">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.close">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.constructor">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.get">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>get
+            <span class="apidocSignatureSpan">(url, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.getBody">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>getBody
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.getResponse">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>getResponse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.getStatusCode">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>getStatusCode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.loadBody">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>loadBody
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.request">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>request
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.AbstractScraper.prototype.scrape">
+            function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>scrape
+            <span class="apidocSignatureSpan">(scraperFn, callbackFn, args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.DynamicScraper">module scraperjs.DynamicScraper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.DynamicScraper">
+            function <span class="apidocSignatureSpan">scraperjs.</span>DynamicScraper
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.closeFactory">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>closeFactory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.create">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>create
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.generateMockErrorMessage">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>generateMockErrorMessage
+            <span class="apidocSignatureSpan">(err, stackTrace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.startFactory">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>startFactory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>JQUERY_FILE</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.DynamicScraper.prototype">module scraperjs.DynamicScraper.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.prototype.clone">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.prototype.close">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.prototype.inject">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>inject
+            <span class="apidocSignatureSpan">(file, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.prototype.loadBody">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>loadBody
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.DynamicScraper.prototype.scrape">
+            function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>scrape
+            <span class="apidocSignatureSpan">(scraperFn, callbackFn, args, stackTrace)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.PhantomPoll">module scraperjs.PhantomPoll</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll.PhantomPoll">
+            function <span class="apidocSignatureSpan">scraperjs.</span>PhantomPoll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.PhantomPoll.prototype">module scraperjs.PhantomPoll.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll.prototype._createInstance">
+            function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>_createInstance
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll.prototype.close">
+            function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll.prototype.constructor">
+            function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll.prototype.create">
+            function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>create
+            <span class="apidocSignatureSpan">(flags, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll.prototype.createPage">
+            function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>createPage
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.PhantomPoll.prototype.exit">
+            function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>exit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.Router">module scraperjs.Router</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.Router">
+            function <span class="apidocSignatureSpan">scraperjs.</span>Router
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.pathMatcher">
+            function <span class="apidocSignatureSpan">scraperjs.Router.</span>pathMatcher
+            <span class="apidocSignatureSpan">(pathOrRE)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.Router.prototype">module scraperjs.Router.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.constructor">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.createDynamic">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>createDynamic
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.createStatic">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>createStatic
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.get">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.on">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>on
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.otherwise">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>otherwise
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.request">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>request
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.route">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>route
+            <span class="apidocSignatureSpan">(url, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Router.prototype.use">
+            function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>use
+            <span class="apidocSignatureSpan">(scraper)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.Scraper">module scraperjs.Scraper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Scraper.DynamicScraper">
+            function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>DynamicScraper
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Scraper.Router">
+            function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>Router
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Scraper.ScraperPromise">
+            function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>ScraperPromise
+            <span class="apidocSignatureSpan">(scraper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.Scraper.StaticScraper">
+            function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>StaticScraper
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.ScraperError">module scraperjs.ScraperError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperError.ScraperError">
+            function <span class="apidocSignatureSpan">scraperjs.</span>ScraperError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.ScraperError.prototype">module scraperjs.ScraperError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperError.prototype.constructor">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.ScraperPromise">module scraperjs.ScraperPromise</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.ScraperPromise">
+            function <span class="apidocSignatureSpan">scraperjs.</span>ScraperPromise
+            <span class="apidocSignatureSpan">(scraper)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.ScraperPromise.prototype">module scraperjs.ScraperPromise.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype._fire">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>_fire
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype._setChainParameter">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>_setChainParameter
+            <span class="apidocSignatureSpan">(param)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype._setPromises">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>_setPromises
+            <span class="apidocSignatureSpan">(promises)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.async">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>async
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.catch">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>catch
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.clone">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.constructor">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(scraper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.delay">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>delay
+            <span class="apidocSignatureSpan">(time, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.done">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>done
+            <span class="apidocSignatureSpan">(doneFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.get">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>get
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.onError">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>onError
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.onStatusCode">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>onStatusCode
+            <span class="apidocSignatureSpan">(code, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.request">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>request
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.scrape">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>scrape
+            <span class="apidocSignatureSpan">(scrapeFn, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.then">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>then
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.ScraperPromise.prototype.timeout">
+            function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>timeout
+            <span class="apidocSignatureSpan">(time, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.StaticScraper">module scraperjs.StaticScraper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.StaticScraper.StaticScraper">
+            function <span class="apidocSignatureSpan">scraperjs.</span>StaticScraper
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.StaticScraper.create">
+            function <span class="apidocSignatureSpan">scraperjs.StaticScraper.</span>create
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scraperjs.StaticScraper.prototype">module scraperjs.StaticScraper.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.StaticScraper.prototype.clone">
+            function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.StaticScraper.prototype.close">
+            function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.StaticScraper.prototype.loadBody">
+            function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>loadBody
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scraperjs.StaticScraper.prototype.scrape">
+            function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>scrape
+            <span class="apidocSignatureSpan">(scraperFn, callbackFn, args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs" id="apidoc.module.scraperjs">module scraperjs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper" id="apidoc.element.scraperjs.AbstractScraper">
+        function <span class="apidocSignatureSpan">scraperjs.</span>AbstractScraper
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AbstractScraper = function () {
+	<span class="apidocCodeCommentSpan">/**
+	 * Status code of the last requested page.
+	 *
+	 * @type {!number}
+	 * @protected
+	 */
+</span>	this.statusCode = null;
+	/**
+	 * Response of the last requested page.
+	 *
+	 * @type {!Object}
+	 * @protected
+	 */
+	this.response = null;
+	/**
+	 * Body of the last webpage, as a string.
+	 *
+	 * @type {!string}
+	 * @protected
+	 */
+	this.body = null;
+	/**
+	 * URL.
+	 *
+	 * @type {!string}
+	 * @protected
+	 */
+	this.url = &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper" id="apidoc.element.scraperjs.DynamicScraper">
+        function <span class="apidocSignatureSpan">scraperjs.</span>DynamicScraper
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DynamicScraper = function (options) {
+	AbstractScraper.call(this);
+	<span class="apidocCodeCommentSpan">/**
+	 * Phantom instance.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+</span>	this.ph = null;
+	/**
+	 * Phantom&#x27;s page.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.page = null;
+	/**
+	 * Phantom&#x27;s options
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.options = {
+		onStdout: function() {},
+		onStderr: function() {}
+	};
+	for (var key in options) { this.options[key] = options[key]; }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll" id="apidoc.element.scraperjs.PhantomPoll">
+        function <span class="apidocSignatureSpan">scraperjs.</span>PhantomPoll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">PhantomPoll = function () {
+	<span class="apidocCodeCommentSpan">/**
+	 * The real PhantomJS instance.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+</span>	this.instance = null;
+	/**
+	 * The PhantomJS instance is being created.
+	 *
+	 * @type {!boolean}
+	 * @private
+	 */
+	this.creating = false;
+	/**
+	 * PhantomJS flags.
+	 *
+	 * @type {!string}
+	 * @private
+	 */
+	this.flags = &#x27;&#x27;;
+	/**
+	 * PhantomJS options.
+	 *
+	 * @type {!Object}
+	 * @private
+	 */
+	this.options = {
+		onStdout: function() {},
+		onStderr: function() {}
+	};
+	/**
+	 * List of functions waiting to be called after the PhantomJS
+	 *   instance is created.
+	 *
+	 * @type {!Array.&#x3c;!function(?)&#x3e;}
+	 * @private
+	 */
+	this.waiting = [];
+	this._createInstance();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router" id="apidoc.element.scraperjs.Router">
+        function <span class="apidocSignatureSpan">scraperjs.</span>Router
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Router = function (options) {
+	options = options || {};
+	<span class="apidocCodeCommentSpan">/**
+	 * Stops routing at first successful match.
+	 *
+	 * @type {!boolean}
+	 * @private
+	 */
+</span>	this.firstMatchStop = options.firstMatch || false;
+	/**
+	 * Chain of promises.
+	 *
+	 * @type {!Array.&#x3c;!Object&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Otherwise promise.
+	 *
+	 * @type {!function(!string=)}
+	 * @private
+	 */
+	this.otherwiseFn = function() {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+For a more flexible scraping and crawling of the web sometimes we need to go through multiple web sites and we don&#x27;t want map
+ every possible url format. For that scraperjs provides the Router class.
+
+### Example
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;),
+	router = new scraperjs.<span class="apidocCodeKeywordSpan">Router</span>();
+
+router
+	.otherwise(function(url) {
+	console.log(&#x22;Url &#x27;&#x22;+url+&#x22;&#x27; couldn&#x27;t be routed.&#x22;);
+});
+
+var path = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperError" id="apidoc.element.scraperjs.ScraperError">
+        function <span class="apidocSignatureSpan">scraperjs.</span>ScraperError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ScraperError = function (message) {
+	<span class="apidocCodeCommentSpan">/**
+	 * Error message.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+</span>	this.message = message;
+	/**
+	 * This type.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+	this.name = &#x27;ScraperError&#x27;;
+	/**
+	 * Stack message.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+	this.stack = (new Error()).stack;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise" id="apidoc.element.scraperjs.ScraperPromise">
+        function <span class="apidocSignatureSpan">scraperjs.</span>ScraperPromise
+        <span class="apidocSignatureSpan">(scraper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ScraperPromise = function (scraper) {
+	<span class="apidocCodeCommentSpan">/**
+	 * Scraper to use..
+	 *
+	 * @type {!Scraper}
+	 * @private
+	 */
+</span>	this.scraper = scraper;
+	/**
+	 * Promise chunks.
+	 *
+	 * @type {!Array.&#x3c;function(function(?))&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Function to call when all the promises are fulfilled.
+	 *
+	 * @type {!function(?, ?)}
+	 * @private
+	 */
+	this.doneCallback = function(last, utils) {
+		return last;
+	};
+	/**
+	 * Function to call when there&#x27;s an error.
+	 *
+	 * @type {!function(?)}
+	 * @private
+	 */
+	this.errorCallback = function(err) {
+		throw err;
+	};
+	/**
+	 * A parameter object to be passed to the chain, at the _fire
+	 *   method. This should be set immediately before the call, and
+	 *   reset to null right after the call, or after it&#x27;s been stored
+	 *   elsewhere.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.chainParameter = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.StaticScraper" id="apidoc.element.scraperjs.StaticScraper">
+        function <span class="apidocSignatureSpan">scraperjs.</span>StaticScraper
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StaticScraper = function () {
+	AbstractScraper.call(this);
+	<span class="apidocCodeCommentSpan">/**
+	 * jQuery.
+	 *
+	 * @type {!function}
+	 * @private
+	 */
+</span>	this.$ = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.AbstractScraper" id="apidoc.module.scraperjs.AbstractScraper">module scraperjs.AbstractScraper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.AbstractScraper" id="apidoc.element.scraperjs.AbstractScraper.AbstractScraper">
+        function <span class="apidocSignatureSpan">scraperjs.</span>AbstractScraper
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AbstractScraper = function () {
+	<span class="apidocCodeCommentSpan">/**
+	 * Status code of the last requested page.
+	 *
+	 * @type {!number}
+	 * @protected
+	 */
+</span>	this.statusCode = null;
+	/**
+	 * Response of the last requested page.
+	 *
+	 * @type {!Object}
+	 * @protected
+	 */
+	this.response = null;
+	/**
+	 * Body of the last webpage, as a string.
+	 *
+	 * @type {!string}
+	 * @protected
+	 */
+	this.body = null;
+	/**
+	 * URL.
+	 *
+	 * @type {!string}
+	 * @protected
+	 */
+	this.url = &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.create" id="apidoc.element.scraperjs.AbstractScraper.create">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.</span>create
+        <span class="apidocSignatureSpan">(ScraperType, url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (ScraperType, url, options) {
+	var promise = new ScraperPromise(new ScraperType(options));
+	if (url) {
+		promise.get(url);
+	}
+	return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.<span class="apidocCodeKeywordSpan">create</span>(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.AbstractScraper.prototype" id="apidoc.module.scraperjs.AbstractScraper.prototype">module scraperjs.AbstractScraper.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.clone" id="apidoc.element.scraperjs.AbstractScraper.prototype.clone">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.close" id="apidoc.element.scraperjs.AbstractScraper.prototype.close">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	grunt.registerTask(&#x27;serve&#x27;, &#x27;Starts express testing server&#x27;, function() {
+		server = testServer(grunt);
+	});
+
+	grunt.registerTask(&#x27;unserve&#x27;, function() {
+		if (server) {
+			server.<span class="apidocCodeKeywordSpan">close</span>();
+		}
+	});
+
+	grunt.registerTask(&#x27;serve-and-test&#x27;, [&#x27;serve&#x27;, &#x27;mochaTest:all&#x27;, &#x27;unserve&#x27;]);
+
+	grunt.registerTask(&#x27;coverage&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coverage&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+	grunt.registerTask(&#x27;coveralls&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coveralls&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.constructor" id="apidoc.element.scraperjs.AbstractScraper.prototype.constructor">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function () {
+	<span class="apidocCodeCommentSpan">/**
+	 * Status code of the last requested page.
+	 *
+	 * @type {!number}
+	 * @protected
+	 */
+</span>	this.statusCode = null;
+	/**
+	 * Response of the last requested page.
+	 *
+	 * @type {!Object}
+	 * @protected
+	 */
+	this.response = null;
+	/**
+	 * Body of the last webpage, as a string.
+	 *
+	 * @type {!string}
+	 * @protected
+	 */
+	this.body = null;
+	/**
+	 * URL.
+	 *
+	 * @type {!string}
+	 * @protected
+	 */
+	this.url = &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.get" id="apidoc.element.scraperjs.AbstractScraper.prototype.get">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>get
+        <span class="apidocSignatureSpan">(url, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (url, callback) {
+		var that = this;
+		request.get(url, function processGet(error, response, body) {
+			if (error) {
+				callback(error);
+			} else {
+				that.response = response;
+				that.statusCode = response.statusCode;
+				that.body = body;
+				that.url = response.request.href;
+				that.loadBody(function(err) {
+					callback(err);
+				});
+			}
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).<span class="apidocCodeKeywordSpan">get</span>();
+	})
+	.then(function(news) {
+		console.log(news);
+	})
+```
+
+The ```scrape``` promise receives a function that will scrape the page and return the result, it only receives jQuery a parameter
+ to scrape the page. Still, very powerful. It uses [cheerio](https://github.com/cheeriojs/cheerio) to do the magic behind the scenes
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.getBody" id="apidoc.element.scraperjs.AbstractScraper.prototype.getBody">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>getBody
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBody = function () {
+		return this.body;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.getResponse" id="apidoc.element.scraperjs.AbstractScraper.prototype.getResponse">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>getResponse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getResponse = function () {
+		return this.response;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.getStatusCode" id="apidoc.element.scraperjs.AbstractScraper.prototype.getStatusCode">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>getStatusCode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getStatusCode = function () {
+		return this.statusCode;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.loadBody" id="apidoc.element.scraperjs.AbstractScraper.prototype.loadBody">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>loadBody
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadBody = function (done) {
+		done();
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			if (error) {
+				callback(error);
+			} else {
+				that.response = response;
+				that.statusCode = response.statusCode;
+				that.body = body;
+				that.url = response.request.href;
+				that.<span class="apidocCodeKeywordSpan">loadBody</span>(function(err) {
+					callback(err);
+				});
+			}
+		});
+		return this;
+	},
+	/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.request" id="apidoc.element.scraperjs.AbstractScraper.prototype.request">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>request
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (options, callback) {
+		var that = this;
+		request(options, function processRequest(error, response, body) {
+			if (error) {
+				callback(error);
+			} else {
+				that.response = response;
+				that.statusCode = response.statusCode;
+				that.body = body;
+				that.url = response.request.href;
+				that.loadBody(function(err) {
+					callback(err);
+				});
+			}
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
++ ```delay(time:number, callback:function(last:?, utils:Object))```, delays the execution of the chain by time (in milliseconds),
++ ```timeout(time:number, callback:function(last:?, utils:Object))```, executes the callback function after time (in milliseconds
+),
++ ```then(lastResult:?, callback:function(last:?, utils:Object))```, executes the callback after the last promise,
++ ```async(callback:function(last:?, done:function(result:?, err:?), utils))```, executes the callback, stopping the promise chain
+, resuming it when the ```done``` function is called. You can provide a result to be passed down the promise chain, or an error
+to trigger the catch promise,
++ ```catch(callback:function(error:Error, utils:Object))```, executes the callback when there was an error, errors block the execution
+ of the chain even if the promise was not defined,
++ ```done(callback:function(last:?, utils:Object))```, executes the callback at the end of the promise chain, this is always executed
+, even if there was an error,
++ ```get(url:string)```, makes a simple HTTP GET request to the url. This promise should be used only once per scraper.
++ ```request(options:Object)```, makes a (possibly) more complex HTTP request, scraperjs uses the [request](https://github.com/mikeal
+/request) module, and this method is a simple wrapper of ```request.<span class="apidocCodeKeywordSpan">request</span>()```. This
+ promise should be used only once per scraper.
++ ```scrape(scrapeFn:function(...?), callback:function(result:?, utils:Object)=, ...?)```, scrapes the page. It executes the scrapeFn
+ and passes it&#x27;s result to the callback. When using the StaticScraper, the scrapeFn receives a jQuery function that is used
+ to scrape the page. When using the DynamicScraper, the scrapeFn doesn&#x27;t receive anything and can only return a [JSON-serializable
+](https://github.com/sgentle/phantomjs-node/wiki#evaluating-pages) type. Optionally an arbitrary number of arguments can be passed
+ to the scraping function. The callback may be omitted, if so, the result of the scraping may be accessed with the ``` then ```
+promise or ``` utils.lastReturn ``` in the next promise.
+
+All callback functions receive as their last parameter a utils object, with it the parameters of an url from a router can be accessed
+. Also the chain can be stopped.
+```javascript
+DynamicScraper.create()
+	.get(&#x22;http://news.ycombinator.com&#x22;)
+	.then(function(_, utils) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.AbstractScraper.prototype.scrape" id="apidoc.element.scraperjs.AbstractScraper.prototype.scrape">
+        function <span class="apidocSignatureSpan">scraperjs.AbstractScraper.prototype.</span>scrape
+        <span class="apidocSignatureSpan">(scraperFn, callbackFn, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scrape = function (scraperFn, callbackFn, args) {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.<span class="apidocCodeKeywordSpan">scrape</span>(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+	})
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.DynamicScraper" id="apidoc.module.scraperjs.DynamicScraper">module scraperjs.DynamicScraper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.DynamicScraper" id="apidoc.element.scraperjs.DynamicScraper.DynamicScraper">
+        function <span class="apidocSignatureSpan">scraperjs.</span>DynamicScraper
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DynamicScraper = function (options) {
+	AbstractScraper.call(this);
+	<span class="apidocCodeCommentSpan">/**
+	 * Phantom instance.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+</span>	this.ph = null;
+	/**
+	 * Phantom&#x27;s page.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.page = null;
+	/**
+	 * Phantom&#x27;s options
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.options = {
+		onStdout: function() {},
+		onStderr: function() {}
+	};
+	for (var key in options) { this.options[key] = options[key]; }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.closeFactory" id="apidoc.element.scraperjs.DynamicScraper.closeFactory">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>closeFactory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">closeFactory = function () {
+	if (phantom instanceof PhantomPoll) {
+		phantom.close();
+	}
+	phantom = phantomOrig;
+	return DynamicScraper;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
++ ``` .stop() ```, function to stop the promise chain,
++ ``` .url ```, url provided to do the scraper,
++ ``` .params ```, object with the parameters defined in the router matching pattern.
+
+
+##### A more powerful DynamicScraper.
+
+When lots of instances of DynamicScraper are needed, it&#x27;s creation gets really heavy on resources and takes a lot of time.
+To make this more lighter you can use a *factory*, that will create only one PhantomJS instance, and every DynamicScraper will request
+ a page to work with. To use it you must start the factory before any DynamicSrcaper is created, ``` scraperjs.DynamicScraper.startFactory
+() ``` and then close the factory after the execution of your program, ``` scraperjs.DynamicScraper.<span class="apidocCodeKeywordSpan
+">closeFactory</span>() ```.
+To make the scraping function more robust you can inject code into the page,
+```js
+var ds = scraperjs.DynamicScraper
+	.create(&#x27;http://news.ycombinator.com&#x27;)
+	.async(function(_, done, utils) {
+		utils.scraper.inject(__dirname+&#x27;/path/to/code.js&#x27;, function(err) {
+			// in this case if there was an error won&#x27;t fire catch promise.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.create" id="apidoc.element.scraperjs.DynamicScraper.create">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>create
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (url, options) {
+	return AbstractScraper.create(DynamicScraper, url, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.<span class="apidocCodeKeywordSpan">create</span>(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.generateMockErrorMessage" id="apidoc.element.scraperjs.DynamicScraper.generateMockErrorMessage">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>generateMockErrorMessage
+        <span class="apidocSignatureSpan">(err, stackTrace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateMockErrorMessage = function (err, stackTrace) {
+	var rg = /^\s{4}at ([^\s]+) \(([^\s]*)\:(\d+):(\d+)\)$/mg;
+	rg.exec(stackTrace);
+	var emsg = rg.exec(stackTrace);
+	var sob = emsg[1];
+	var sfile = emsg[2];
+	var sline = emsg[3];
+	var sc = emsg[4];
+
+	var line = Number(sline) + Math.max(err.line-1, 0);
+
+	var mock = new Error(err.message);
+	// Prevents the use of a property named &#x27;line&#x27;!
+	delete err.line;
+	for(var x in err) {
+		mock[x] = err[x];
+	}
+	mock.stack = mock.stack.replace(/\t/g, &#x27;    &#x27;);
+
+	var ats = mock.stack.split(&#x27;\n&#x27;);
+	ats.unshift(&#x27;    at &#x27; + sob + &#x27; (&#x27; + sfile + &#x27;:&#x27; + line + &#x27;:&#x27; + sc + &#x27;)&#x27;);
+	ats.unshift(&#x27;Error&#x27; + (err.message?&#x27;: &#x27;+err.message:&#x27;&#x27;));
+	mock.stack = ats.join(&#x27;\n&#x27;);
+
+	return mock;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.startFactory" id="apidoc.element.scraperjs.DynamicScraper.startFactory">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.</span>startFactory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startFactory = function () {
+	phantom = new PhantomPoll();
+	return DynamicScraper;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
++ ``` .stop() ```, function to stop the promise chain,
++ ``` .url ```, url provided to do the scraper,
++ ``` .params ```, object with the parameters defined in the router matching pattern.
+
+
+##### A more powerful DynamicScraper.
+
+When lots of instances of DynamicScraper are needed, it&#x27;s creation gets really heavy on resources and takes a lot of time.
+To make this more lighter you can use a *factory*, that will create only one PhantomJS instance, and every DynamicScraper will request
+ a page to work with. To use it you must start the factory before any DynamicSrcaper is created, ``` scraperjs.DynamicScraper.<span
+ class="apidocCodeKeywordSpan">startFactory</span>() ``` and then close the factory after the execution of your program, ``` scraperjs
+.DynamicScraper.closeFactory() ```.
+To make the scraping function more robust you can inject code into the page,
+```js
+var ds = scraperjs.DynamicScraper
+	.create(&#x27;http://news.ycombinator.com&#x27;)
+	.async(function(_, done, utils) {
+		utils.scraper.inject(__dirname+&#x27;/path/to/code.js&#x27;, function(err) {
+			// in this case if there was an error won&#x27;t fire catch promise.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.DynamicScraper.prototype" id="apidoc.module.scraperjs.DynamicScraper.prototype">module scraperjs.DynamicScraper.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.prototype.clone" id="apidoc.element.scraperjs.DynamicScraper.prototype.clone">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {
+	return new DynamicScraper();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.prototype.close" id="apidoc.element.scraperjs.DynamicScraper.prototype.close">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+	if (this.page) {
+		this.page.close();
+	}
+	if (this.ph) {
+		this.ph.exit();
+	}
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	grunt.registerTask(&#x27;serve&#x27;, &#x27;Starts express testing server&#x27;, function() {
+		server = testServer(grunt);
+	});
+
+	grunt.registerTask(&#x27;unserve&#x27;, function() {
+		if (server) {
+			server.<span class="apidocCodeKeywordSpan">close</span>();
+		}
+	});
+
+	grunt.registerTask(&#x27;serve-and-test&#x27;, [&#x27;serve&#x27;, &#x27;mochaTest:all&#x27;, &#x27;unserve&#x27;]);
+
+	grunt.registerTask(&#x27;coverage&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coverage&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+	grunt.registerTask(&#x27;coveralls&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coveralls&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.prototype.inject" id="apidoc.element.scraperjs.DynamicScraper.prototype.inject">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>inject
+        <span class="apidocSignatureSpan">(file, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inject = function (file, callback) {
+	if (this.page) {
+		this.page.injectJs(file, function(success) {
+			if (success) {
+				callback();
+			} else {
+				callback(new ScraperError(&#x27;Couldn\&#x27;t inject code, at &#x22;&#x27; + file + &#x27;&#x22;.&#x27;));
+			}
+		});
+	} else {
+		throw new ScraperError(&#x27;Couldn\&#x27;t inject code, at &#x22;&#x27; + file + &#x27;&#x22;. The page has not been initialized yet.&#x27;);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+When lots of instances of DynamicScraper are needed, it&#x27;s creation gets really heavy on resources and takes a lot of time.
+To make this more lighter you can use a *factory*, that will create only one PhantomJS instance, and every DynamicScraper will request
+ a page to work with. To use it you must start the factory before any DynamicSrcaper is created, ``` scraperjs.DynamicScraper.startFactory
+() ``` and then close the factory after the execution of your program, ``` scraperjs.DynamicScraper.closeFactory() ```.
+To make the scraping function more robust you can inject code into the page,
+```js
+var ds = scraperjs.DynamicScraper
+	.create(&#x27;http://news.ycombinator.com&#x27;)
+	.async(function(_, done, utils) {
+		utils.scraper.<span class="apidocCodeKeywordSpan">inject</span>(__dirname+&#x27;/path/to/code.js&#x27;, function(err) {
+			// in this case if there was an error won&#x27;t fire catch promise.
+			if(err) {
+				done(err);
+			} else {
+				done();
+			}
+		});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.prototype.loadBody" id="apidoc.element.scraperjs.DynamicScraper.prototype.loadBody">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>loadBody
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadBody = function (done) {
+	var that = this;
+	phantom.create(&#x27;--load-images=no&#x27;, that.options, function(ph) {
+		that.ph = ph;
+		ph.createPage(function(page) {
+			that.page = page;
+			page.setContent(that.body, that.url, function() {
+				that.inject(DynamicScraper.JQUERY_FILE, function(err) {
+					done(err ? new ScraperError(&#x27;Couldn\&#x27;t inject jQuery into the page.&#x27;) : undefined);
+				});
+			});
+		});
+	});
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			if (error) {
+				callback(error);
+			} else {
+				that.response = response;
+				that.statusCode = response.statusCode;
+				that.body = body;
+				that.url = response.request.href;
+				that.<span class="apidocCodeKeywordSpan">loadBody</span>(function(err) {
+					callback(err);
+				});
+			}
+		});
+		return this;
+	},
+	/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.DynamicScraper.prototype.scrape" id="apidoc.element.scraperjs.DynamicScraper.prototype.scrape">
+        function <span class="apidocSignatureSpan">scraperjs.DynamicScraper.prototype.</span>scrape
+        <span class="apidocSignatureSpan">(scraperFn, callbackFn, args, stackTrace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scrape = function (scraperFn, callbackFn, args, stackTrace) {
+	args = args || [];
+
+	args.unshift(scraperFn.toString());
+	args.unshift(function(result) {
+		if(result.error) {
+			callbackFn(DynamicScraper.generateMockErrorMessage(result.error, stackTrace), null);
+		} else {
+			callbackFn(null, result.result);
+		}
+	});
+	args.unshift(PhantomWrapper);
+
+	this.page.evaluate.apply(this.page, args);
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.<span class="apidocCodeKeywordSpan">scrape</span>(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+	})
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.PhantomPoll" id="apidoc.module.scraperjs.PhantomPoll">module scraperjs.PhantomPoll</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll.PhantomPoll" id="apidoc.element.scraperjs.PhantomPoll.PhantomPoll">
+        function <span class="apidocSignatureSpan">scraperjs.</span>PhantomPoll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">PhantomPoll = function () {
+	<span class="apidocCodeCommentSpan">/**
+	 * The real PhantomJS instance.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+</span>	this.instance = null;
+	/**
+	 * The PhantomJS instance is being created.
+	 *
+	 * @type {!boolean}
+	 * @private
+	 */
+	this.creating = false;
+	/**
+	 * PhantomJS flags.
+	 *
+	 * @type {!string}
+	 * @private
+	 */
+	this.flags = &#x27;&#x27;;
+	/**
+	 * PhantomJS options.
+	 *
+	 * @type {!Object}
+	 * @private
+	 */
+	this.options = {
+		onStdout: function() {},
+		onStderr: function() {}
+	};
+	/**
+	 * List of functions waiting to be called after the PhantomJS
+	 *   instance is created.
+	 *
+	 * @type {!Array.&#x3c;!function(?)&#x3e;}
+	 * @private
+	 */
+	this.waiting = [];
+	this._createInstance();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.PhantomPoll.prototype" id="apidoc.module.scraperjs.PhantomPoll.prototype">module scraperjs.PhantomPoll.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll.prototype._createInstance" id="apidoc.element.scraperjs.PhantomPoll.prototype._createInstance">
+        function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>_createInstance
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createInstance = function (callback) {
+		if (this.creating &#x26;&#x26; callback) {
+			this.waiting.push(callback);
+		} else {
+			var that = this;
+			this.creating = true;
+			phantom.create(this.flags, this.options, function(ph) {
+				that.instance = ph;
+				that.creating = false;
+				that.waiting.forEach(function(callback) {
+					callback(ph);
+				});
+				that.waiting = [];
+			});
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	 * List of functions waiting to be called after the PhantomJS
+	 *   instance is created.
+	 *
+	 * @type {!Array.&#x3c;!function(?)&#x3e;}
+	 * @private
+	 */
+	this.waiting = [];
+	this.<span class="apidocCodeKeywordSpan">_createInstance</span>();
+};
+PhantomPoll.prototype = {
+	constructor: PhantomPoll,
+	/**
+	 * Creates a PhantomJS page, to be called with a callback, which
+	 *   will receive the page.
+	 *
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll.prototype.close" id="apidoc.element.scraperjs.PhantomPoll.prototype.close">
+        function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+		if (this.instance) {
+			this.instance.exit();
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	grunt.registerTask(&#x27;serve&#x27;, &#x27;Starts express testing server&#x27;, function() {
+		server = testServer(grunt);
+	});
+
+	grunt.registerTask(&#x27;unserve&#x27;, function() {
+		if (server) {
+			server.<span class="apidocCodeKeywordSpan">close</span>();
+		}
+	});
+
+	grunt.registerTask(&#x27;serve-and-test&#x27;, [&#x27;serve&#x27;, &#x27;mochaTest:all&#x27;, &#x27;unserve&#x27;]);
+
+	grunt.registerTask(&#x27;coverage&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coverage&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+	grunt.registerTask(&#x27;coveralls&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coveralls&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll.prototype.constructor" id="apidoc.element.scraperjs.PhantomPoll.prototype.constructor">
+        function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function () {
+	<span class="apidocCodeCommentSpan">/**
+	 * The real PhantomJS instance.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+</span>	this.instance = null;
+	/**
+	 * The PhantomJS instance is being created.
+	 *
+	 * @type {!boolean}
+	 * @private
+	 */
+	this.creating = false;
+	/**
+	 * PhantomJS flags.
+	 *
+	 * @type {!string}
+	 * @private
+	 */
+	this.flags = &#x27;&#x27;;
+	/**
+	 * PhantomJS options.
+	 *
+	 * @type {!Object}
+	 * @private
+	 */
+	this.options = {
+		onStdout: function() {},
+		onStderr: function() {}
+	};
+	/**
+	 * List of functions waiting to be called after the PhantomJS
+	 *   instance is created.
+	 *
+	 * @type {!Array.&#x3c;!function(?)&#x3e;}
+	 * @private
+	 */
+	this.waiting = [];
+	this._createInstance();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll.prototype.create" id="apidoc.element.scraperjs.PhantomPoll.prototype.create">
+        function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>create
+        <span class="apidocSignatureSpan">(flags, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (flags, options, callback) {
+		this.flags = flags;
+		this.options = options;
+		callback(this);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.<span class="apidocCodeKeywordSpan">create</span>(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll.prototype.createPage" id="apidoc.element.scraperjs.PhantomPoll.prototype.createPage">
+        function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>createPage
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPage = function (callback) {
+		if (this.instance) {
+			this.instance.createPage(function(page) {
+				callback(page);
+			});
+		} else {
+			var that = this;
+			this._createInstance(function() {
+				that.createPage(callback);
+			});
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	 *
+	 * @param  {!function(?)} callback Function to be called after the
+	 *   page is created, it receives the page object.
+	 * @public
+	 */
+	createPage: function(callback) {
+		if (this.instance) {
+			this.instance.<span class="apidocCodeKeywordSpan">createPage</span>(function(page) {
+				callback(page);
+			});
+		} else {
+			var that = this;
+			this._createInstance(function() {
+				that.createPage(callback);
+			});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.PhantomPoll.prototype.exit" id="apidoc.element.scraperjs.PhantomPoll.prototype.exit">
+        function <span class="apidocSignatureSpan">scraperjs.PhantomPoll.prototype.</span>exit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exit = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	/**
+	 * Exits the phantom instance.
+	 *
+	 * @public
+	 */
+	close: function() {
+		if (this.instance) {
+			this.instance.<span class="apidocCodeKeywordSpan">exit</span>();
+		}
+	}
+};
+
+module.exports = PhantomPoll;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.Router" id="apidoc.module.scraperjs.Router">module scraperjs.Router</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.Router" id="apidoc.element.scraperjs.Router.Router">
+        function <span class="apidocSignatureSpan">scraperjs.</span>Router
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Router = function (options) {
+	options = options || {};
+	<span class="apidocCodeCommentSpan">/**
+	 * Stops routing at first successful match.
+	 *
+	 * @type {!boolean}
+	 * @private
+	 */
+</span>	this.firstMatchStop = options.firstMatch || false;
+	/**
+	 * Chain of promises.
+	 *
+	 * @type {!Array.&#x3c;!Object&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Otherwise promise.
+	 *
+	 * @type {!function(!string=)}
+	 * @private
+	 */
+	this.otherwiseFn = function() {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+For a more flexible scraping and crawling of the web sometimes we need to go through multiple web sites and we don&#x27;t want map
+ every possible url format. For that scraperjs provides the Router class.
+
+### Example
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;),
+	router = new scraperjs.<span class="apidocCodeKeywordSpan">Router</span>();
+
+router
+	.otherwise(function(url) {
+	console.log(&#x22;Url &#x27;&#x22;+url+&#x22;&#x27; couldn&#x27;t be routed.&#x22;);
+});
+
+var path = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.pathMatcher" id="apidoc.element.scraperjs.Router.pathMatcher">
+        function <span class="apidocSignatureSpan">scraperjs.Router.</span>pathMatcher
+        <span class="apidocSignatureSpan">(pathOrRE)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pathMatcher = function (pathOrRE) {
+	var pattern,
+		keys = [&#x27;url&#x27;];
+	if (pathOrRE instanceof RegExp) {
+		pattern = pathOrRE;
+	} else if (typeof pathOrRE === &#x27;string&#x27;) {
+		pattern = pathToRegExp(pathOrRE, keys);
+	} else {
+		throw new ScraperError(&#x27;A path must be a string or a regular expression.&#x27;);
+	}
+
+	return function patternMatchingFunction(url) {
+		var match = pattern.exec(url);
+		if (!match) {
+			return false;
+		} else {
+			return keys.reduce(function(obj, value, index) {
+				obj[value] = match[index];
+				return obj;
+			}, {});
+		}
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.Router.prototype" id="apidoc.module.scraperjs.Router.prototype">module scraperjs.Router.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.constructor" id="apidoc.element.scraperjs.Router.prototype.constructor">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (options) {
+	options = options || {};
+	<span class="apidocCodeCommentSpan">/**
+	 * Stops routing at first successful match.
+	 *
+	 * @type {!boolean}
+	 * @private
+	 */
+</span>	this.firstMatchStop = options.firstMatch || false;
+	/**
+	 * Chain of promises.
+	 *
+	 * @type {!Array.&#x3c;!Object&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Otherwise promise.
+	 *
+	 * @type {!function(!string=)}
+	 * @private
+	 */
+	this.otherwiseFn = function() {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.createDynamic" id="apidoc.element.scraperjs.Router.prototype.createDynamic">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>createDynamic
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createDynamic = function () {
+		var length = this.promises.length,
+			last = this.promises[length - 1];
+		if (length &#x26;&#x26; last &#x26;&#x26; !last.scraper) {
+			var ss = DynamicScraper.create();
+			last.scraper = ss;
+			return ss;
+		} else {
+			throw new ScraperError(&#x27;&#x27;);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.createStatic" id="apidoc.element.scraperjs.Router.prototype.createStatic">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>createStatic
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createStatic = function () {
+		var length = this.promises.length,
+			last = this.promises[length - 1];
+		if (length &#x26;&#x26; last &#x26;&#x26; !last.scraper) {
+			var ss = StaticScraper.create();
+			last.scraper = ss;
+			return ss;
+		} else {
+			throw new ScraperError(&#x27;&#x27;);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	.otherwise(function(url) {
+	console.log(&#x22;Url &#x27;&#x22;+url+&#x22;&#x27; couldn&#x27;t be routed.&#x22;);
+});
+
+var path = {};
+
+router.on(&#x27;https?://(www.)?youtube.com/watch/:id&#x27;)
+	.<span class="apidocCodeKeywordSpan">createStatic</span>()
+	.scrape(function($) {
+		return $(&#x22;a&#x22;).map(function() {
+			return $(this).attr(&#x22;href&#x22;);
+		}).get();
+	})
+	.then(function(links, utils) {
+		path[utils.params.id] = links
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.get" id="apidoc.element.scraperjs.Router.prototype.get">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function () {
+		var length = this.promises.length,
+			last = this.promises[length - 1];
+		if (length &#x26;&#x26; last) {
+			last.rqMethod = function(scraper, url) {
+				scraper.get(url);
+			};
+			return this;
+		} else {
+			throw new ScraperError(&#x27;&#x27;);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).<span class="apidocCodeKeywordSpan">get</span>();
+	})
+	.then(function(news) {
+		console.log(news);
+	})
+```
+
+The ```scrape``` promise receives a function that will scrape the page and return the result, it only receives jQuery a parameter
+ to scrape the page. Still, very powerful. It uses [cheerio](https://github.com/cheeriojs/cheerio) to do the magic behind the scenes
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.on" id="apidoc.element.scraperjs.Router.prototype.on">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>on
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (path) {
+		var callback;
+		if (typeof path === &#x27;function&#x27;) {
+			callback = path;
+		}
+
+		this.promises.push({
+			callback: callback ? function(url) {
+				return callback(url);
+			} : Router.pathMatcher(path),
+			scraper: null,
+			rqMethod: null
+		});
+		return this.get();
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+router
+	.otherwise(function(url) {
+	console.log(&#x22;Url &#x27;&#x22;+url+&#x22;&#x27; couldn&#x27;t be routed.&#x22;);
+});
+
+var path = {};
+
+router.<span class="apidocCodeKeywordSpan">on</span>(&#x27;https?://(www.)?youtube.com/watch/:id&#x27;)
+	.createStatic()
+	.scrape(function($) {
+		return $(&#x22;a&#x22;).map(function() {
+			return $(this).attr(&#x22;href&#x22;);
+		}).get();
+	})
+	.then(function(links, utils) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.otherwise" id="apidoc.element.scraperjs.Router.prototype.otherwise">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>otherwise
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">otherwise = function (callback) {
+		this.otherwiseFn = callback;
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Example
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;),
+	router = new scraperjs.Router();
+
+router
+	.<span class="apidocCodeKeywordSpan">otherwise</span>(function(url) {
+	console.log(&#x22;Url &#x27;&#x22;+url+&#x22;&#x27; couldn&#x27;t be routed.&#x22;);
+});
+
+var path = {};
+
+router.on(&#x27;https?://(www.)?youtube.com/watch/:id&#x27;)
+	.createStatic()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.request" id="apidoc.element.scraperjs.Router.prototype.request">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>request
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (options) {
+		var length = this.promises.length,
+			last = this.promises[length - 1];
+		if (length &#x26;&#x26; last) {
+			last.rqMethod = function(scraper, url) {
+				options.uri = url;
+				scraper.request(options);
+			};
+			return this;
+		} else {
+			throw new ScraperError(&#x27;&#x27;);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
++ ```delay(time:number, callback:function(last:?, utils:Object))```, delays the execution of the chain by time (in milliseconds),
++ ```timeout(time:number, callback:function(last:?, utils:Object))```, executes the callback function after time (in milliseconds
+),
++ ```then(lastResult:?, callback:function(last:?, utils:Object))```, executes the callback after the last promise,
++ ```async(callback:function(last:?, done:function(result:?, err:?), utils))```, executes the callback, stopping the promise chain
+, resuming it when the ```done``` function is called. You can provide a result to be passed down the promise chain, or an error
+to trigger the catch promise,
++ ```catch(callback:function(error:Error, utils:Object))```, executes the callback when there was an error, errors block the execution
+ of the chain even if the promise was not defined,
++ ```done(callback:function(last:?, utils:Object))```, executes the callback at the end of the promise chain, this is always executed
+, even if there was an error,
++ ```get(url:string)```, makes a simple HTTP GET request to the url. This promise should be used only once per scraper.
++ ```request(options:Object)```, makes a (possibly) more complex HTTP request, scraperjs uses the [request](https://github.com/mikeal
+/request) module, and this method is a simple wrapper of ```request.<span class="apidocCodeKeywordSpan">request</span>()```. This
+ promise should be used only once per scraper.
++ ```scrape(scrapeFn:function(...?), callback:function(result:?, utils:Object)=, ...?)```, scrapes the page. It executes the scrapeFn
+ and passes it&#x27;s result to the callback. When using the StaticScraper, the scrapeFn receives a jQuery function that is used
+ to scrape the page. When using the DynamicScraper, the scrapeFn doesn&#x27;t receive anything and can only return a [JSON-serializable
+](https://github.com/sgentle/phantomjs-node/wiki#evaluating-pages) type. Optionally an arbitrary number of arguments can be passed
+ to the scraping function. The callback may be omitted, if so, the result of the scraping may be accessed with the ``` then ```
+promise or ``` utils.lastReturn ``` in the next promise.
+
+All callback functions receive as their last parameter a utils object, with it the parameters of an url from a router can be accessed
+. Also the chain can be stopped.
+```javascript
+DynamicScraper.create()
+	.get(&#x22;http://news.ycombinator.com&#x22;)
+	.then(function(_, utils) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.route" id="apidoc.element.scraperjs.Router.prototype.route">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>route
+        <span class="apidocSignatureSpan">(url, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">route = function (url, callback) {
+		var that = this,
+			atLeastOne = false,
+			stopFlag = {},
+			lastReturn;
+		callback = callback || function() {};
+		async.eachSeries(this.promises, function(promiseObj, done) {
+
+			var matcher = promiseObj.callback,
+				scraper,
+				reqMethod = promiseObj.rqMethod;
+			var result = matcher(url);
+			if (!!result) {
+				scraper = promiseObj.scraper.clone();
+				atLeastOne = true;
+				scraper._setChainParameter(result);
+				scraper.done(function(lr, utils) {
+					lastReturn = lr;
+					done(that.firstMatchStop ? stopFlag : undefined);
+				});
+				reqMethod(scraper, url);
+			} else {
+				done();
+			}
+
+		}, function() {
+			if (!atLeastOne) {
+				that.otherwiseFn(url);
+			}
+			callback(atLeastOne, lastReturn);
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			return $(this).attr(&#x22;href&#x22;);
+		}).get();
+	})
+	.then(function(links, utils) {
+		path[utils.params.id] = links
+	})
+
+router.<span class="apidocCodeKeywordSpan">route</span>(&#x22;https://www.youtube.com/watch/YE7VzlLtp-4&#x22;, function() {
+	console.log(&#x22;i&#x27;m done&#x22;);
+});
+```
+
+Code that allows for parameters in paths is from the project [Routes.js](https://github.com/aaronblohowiak/routes.js), information
+ about the [path formating](https://github.com/aaronblohowiak/routes.js#path-formats) is there too.
+
+# API overview
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Router.prototype.use" id="apidoc.element.scraperjs.Router.prototype.use">
+        function <span class="apidocSignatureSpan">scraperjs.Router.prototype.</span>use
+        <span class="apidocSignatureSpan">(scraper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (scraper) {
+		var length = this.promises.length,
+			last = this.promises[length - 1];
+		if (length &#x26;&#x26; last &#x26;&#x26; !last.scraper) {
+			last.scraper = scraper;
+			return this;
+		} else {
+			throw new ScraperError(&#x27;&#x27;);
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.Scraper" id="apidoc.module.scraperjs.Scraper">module scraperjs.Scraper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Scraper.DynamicScraper" id="apidoc.element.scraperjs.Scraper.DynamicScraper">
+        function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>DynamicScraper
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DynamicScraper = function (options) {
+	AbstractScraper.call(this);
+	<span class="apidocCodeCommentSpan">/**
+	 * Phantom instance.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+</span>	this.ph = null;
+	/**
+	 * Phantom&#x27;s page.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.page = null;
+	/**
+	 * Phantom&#x27;s options
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.options = {
+		onStdout: function() {},
+		onStderr: function() {}
+	};
+	for (var key in options) { this.options[key] = options[key]; }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Scraper.Router" id="apidoc.element.scraperjs.Scraper.Router">
+        function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>Router
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Router = function (options) {
+	options = options || {};
+	<span class="apidocCodeCommentSpan">/**
+	 * Stops routing at first successful match.
+	 *
+	 * @type {!boolean}
+	 * @private
+	 */
+</span>	this.firstMatchStop = options.firstMatch || false;
+	/**
+	 * Chain of promises.
+	 *
+	 * @type {!Array.&#x3c;!Object&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Otherwise promise.
+	 *
+	 * @type {!function(!string=)}
+	 * @private
+	 */
+	this.otherwiseFn = function() {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+For a more flexible scraping and crawling of the web sometimes we need to go through multiple web sites and we don&#x27;t want map
+ every possible url format. For that scraperjs provides the Router class.
+
+### Example
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;),
+	router = new scraperjs.<span class="apidocCodeKeywordSpan">Router</span>();
+
+router
+	.otherwise(function(url) {
+	console.log(&#x22;Url &#x27;&#x22;+url+&#x22;&#x27; couldn&#x27;t be routed.&#x22;);
+});
+
+var path = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Scraper.ScraperPromise" id="apidoc.element.scraperjs.Scraper.ScraperPromise">
+        function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>ScraperPromise
+        <span class="apidocSignatureSpan">(scraper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ScraperPromise = function (scraper) {
+	<span class="apidocCodeCommentSpan">/**
+	 * Scraper to use..
+	 *
+	 * @type {!Scraper}
+	 * @private
+	 */
+</span>	this.scraper = scraper;
+	/**
+	 * Promise chunks.
+	 *
+	 * @type {!Array.&#x3c;function(function(?))&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Function to call when all the promises are fulfilled.
+	 *
+	 * @type {!function(?, ?)}
+	 * @private
+	 */
+	this.doneCallback = function(last, utils) {
+		return last;
+	};
+	/**
+	 * Function to call when there&#x27;s an error.
+	 *
+	 * @type {!function(?)}
+	 * @private
+	 */
+	this.errorCallback = function(err) {
+		throw err;
+	};
+	/**
+	 * A parameter object to be passed to the chain, at the _fire
+	 *   method. This should be set immediately before the call, and
+	 *   reset to null right after the call, or after it&#x27;s been stored
+	 *   elsewhere.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.chainParameter = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.Scraper.StaticScraper" id="apidoc.element.scraperjs.Scraper.StaticScraper">
+        function <span class="apidocSignatureSpan">scraperjs.Scraper.</span>StaticScraper
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StaticScraper = function () {
+	AbstractScraper.call(this);
+	<span class="apidocCodeCommentSpan">/**
+	 * jQuery.
+	 *
+	 * @type {!function}
+	 * @private
+	 */
+</span>	this.$ = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.ScraperError" id="apidoc.module.scraperjs.ScraperError">module scraperjs.ScraperError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperError.ScraperError" id="apidoc.element.scraperjs.ScraperError.ScraperError">
+        function <span class="apidocSignatureSpan">scraperjs.</span>ScraperError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ScraperError = function (message) {
+	<span class="apidocCodeCommentSpan">/**
+	 * Error message.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+</span>	this.message = message;
+	/**
+	 * This type.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+	this.name = &#x27;ScraperError&#x27;;
+	/**
+	 * Stack message.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+	this.stack = (new Error()).stack;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.ScraperError.prototype" id="apidoc.module.scraperjs.ScraperError.prototype">module scraperjs.ScraperError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperError.prototype.constructor" id="apidoc.element.scraperjs.ScraperError.prototype.constructor">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (message) {
+	<span class="apidocCodeCommentSpan">/**
+	 * Error message.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+</span>	this.message = message;
+	/**
+	 * This type.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+	this.name = &#x27;ScraperError&#x27;;
+	/**
+	 * Stack message.
+	 *
+	 * @type {!string}
+	 * @public
+	 */
+	this.stack = (new Error()).stack;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.ScraperPromise" id="apidoc.module.scraperjs.ScraperPromise">module scraperjs.ScraperPromise</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.ScraperPromise" id="apidoc.element.scraperjs.ScraperPromise.ScraperPromise">
+        function <span class="apidocSignatureSpan">scraperjs.</span>ScraperPromise
+        <span class="apidocSignatureSpan">(scraper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ScraperPromise = function (scraper) {
+	<span class="apidocCodeCommentSpan">/**
+	 * Scraper to use..
+	 *
+	 * @type {!Scraper}
+	 * @private
+	 */
+</span>	this.scraper = scraper;
+	/**
+	 * Promise chunks.
+	 *
+	 * @type {!Array.&#x3c;function(function(?))&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Function to call when all the promises are fulfilled.
+	 *
+	 * @type {!function(?, ?)}
+	 * @private
+	 */
+	this.doneCallback = function(last, utils) {
+		return last;
+	};
+	/**
+	 * Function to call when there&#x27;s an error.
+	 *
+	 * @type {!function(?)}
+	 * @private
+	 */
+	this.errorCallback = function(err) {
+		throw err;
+	};
+	/**
+	 * A parameter object to be passed to the chain, at the _fire
+	 *   method. This should be set immediately before the call, and
+	 *   reset to null right after the call, or after it&#x27;s been stored
+	 *   elsewhere.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.chainParameter = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.ScraperPromise.prototype" id="apidoc.module.scraperjs.ScraperPromise.prototype">module scraperjs.ScraperPromise.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype._fire" id="apidoc.element.scraperjs.ScraperPromise.prototype._fire">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>_fire
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fire = function (error) {
+		var that = this,
+			param = this.chainParameter,
+			stopPointer = {},
+			utils = {
+				stop: null,
+				url: this.scraper.url,
+				scraper: this,
+				params: param,
+				lastReturn: undefined
+			},
+			keep = true;
+		this.chainParameter = null;
+
+		if (error) {
+			this.errorCallback(error, utils);
+			this.doneCallback(utils);
+			return;
+		}
+
+		async.eachSeries(this.promises, function dispatcher(fn, callback) {
+			var done = function(err, lastReturn) {
+				utils.lastReturn = lastReturn;
+				if (err === stopPointer) {
+					keep = false;
+					callback(err);
+				} else if (err) {
+					callback(err);
+				} else if (keep) {
+					callback();
+				}
+			};
+			utils.stop = function() {
+				done(stopPointer, null);
+			};
+
+			try {
+				fn.call(that, done, utils);
+			} catch (err) {
+				done(err, null);
+			}
+		}, function(err) {
+			utils.stop = null;
+			if (err &#x26;&#x26; err !== stopPointer) {
+				that.errorCallback(err, utils);
+			}
+			that.doneCallback(utils.lastReturn, utils);
+			that.scraper.close();
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype._setChainParameter" id="apidoc.element.scraperjs.ScraperPromise.prototype._setChainParameter">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>_setChainParameter
+        <span class="apidocSignatureSpan">(param)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_setChainParameter = function (param) {
+		this.chainParameter = param;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype._setPromises" id="apidoc.element.scraperjs.ScraperPromise.prototype._setPromises">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>_setPromises
+        <span class="apidocSignatureSpan">(promises)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_setPromises = function (promises) {
+		this.promises = promises;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.async" id="apidoc.element.scraperjs.ScraperPromise.prototype.async">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>async
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (callback) {
+		this.promises.push(function async(done, utils) {
+			callback(utils.lastReturn, done, utils);
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### A more powerful DynamicScraper.
+
+When lots of instances of DynamicScraper are needed, it&#x27;s creation gets really heavy on resources and takes a lot of time.
+To make this more lighter you can use a *factory*, that will create only one PhantomJS instance, and every DynamicScraper will request
+ a page to work with. To use it you must start the factory before any DynamicSrcaper is created, ``` scraperjs.DynamicScraper.startFactory
+() ``` and then close the factory after the execution of your program, ``` scraperjs.DynamicScraper.closeFactory() ```.
+To make the scraping function more robust you can inject code into the page,
+```js
+var ds = scraperjs.DynamicScraper
+	.create(&#x27;http://news.ycombinator.com&#x27;)
+	.<span class="apidocCodeKeywordSpan">async</span>(function(_, done, utils) {
+		utils.scraper.inject(__dirname+&#x27;/path/to/code.js&#x27;, function(err) {
+			// in this case if there was an error won&#x27;t fire catch promise.
+			if(err) {
+				done(err);
+			} else {
+				done();
+			}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.catch" id="apidoc.element.scraperjs.ScraperPromise.prototype.catch">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>catch
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">catch = function (callback) {
+		this.errorCallback = callback;
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.clone" id="apidoc.element.scraperjs.ScraperPromise.prototype.clone">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {
+		var instance = this.scraper.clone(),
+			promise = new ScraperPromise(instance);
+		promise._setPromises(this.promises);
+		promise.done(this.doneCallback);
+		promise.catch(this.errorCallback);
+		return promise;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.constructor" id="apidoc.element.scraperjs.ScraperPromise.prototype.constructor">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(scraper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (scraper) {
+	<span class="apidocCodeCommentSpan">/**
+	 * Scraper to use..
+	 *
+	 * @type {!Scraper}
+	 * @private
+	 */
+</span>	this.scraper = scraper;
+	/**
+	 * Promise chunks.
+	 *
+	 * @type {!Array.&#x3c;function(function(?))&#x3e;}
+	 * @private
+	 */
+	this.promises = [];
+	/**
+	 * Function to call when all the promises are fulfilled.
+	 *
+	 * @type {!function(?, ?)}
+	 * @private
+	 */
+	this.doneCallback = function(last, utils) {
+		return last;
+	};
+	/**
+	 * Function to call when there&#x27;s an error.
+	 *
+	 * @type {!function(?)}
+	 * @private
+	 */
+	this.errorCallback = function(err) {
+		throw err;
+	};
+	/**
+	 * A parameter object to be passed to the chain, at the _fire
+	 *   method. This should be set immediately before the call, and
+	 *   reset to null right after the call, or after it&#x27;s been stored
+	 *   elsewhere.
+	 *
+	 * @type {?}
+	 * @private
+	 */
+	this.chainParameter = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.delay" id="apidoc.element.scraperjs.ScraperPromise.prototype.delay">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>delay
+        <span class="apidocSignatureSpan">(time, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delay = function (time, callback) {
+		callback = callback || function() {};
+		this.promises.push(function delay(done, utils) {
+			setTimeout(function() {
+				done(null, callback(utils));
+			}, time);
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.done" id="apidoc.element.scraperjs.ScraperPromise.prototype.done">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>done
+        <span class="apidocSignatureSpan">(doneFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">done = function (doneFn) {
+		this.doneCallback = doneFn;
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.get" id="apidoc.element.scraperjs.ScraperPromise.prototype.get">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>get
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (url) {
+		var that = this;
+		this.scraper.get(url, function(err) {
+			that._fire(err);
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).<span class="apidocCodeKeywordSpan">get</span>();
+	})
+	.then(function(news) {
+		console.log(news);
+	})
+```
+
+The ```scrape``` promise receives a function that will scrape the page and return the result, it only receives jQuery a parameter
+ to scrape the page. Still, very powerful. It uses [cheerio](https://github.com/cheeriojs/cheerio) to do the magic behind the scenes
+.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.onError" id="apidoc.element.scraperjs.ScraperPromise.prototype.onError">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>onError
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (callback) {
+		console.warn(&#x22;The &#x27;onError&#x27; is being DEPRECATED in favor of &#x27;catch&#x27;&#x22;);
+		return this.catch(callback);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.onStatusCode" id="apidoc.element.scraperjs.ScraperPromise.prototype.onStatusCode">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>onStatusCode
+        <span class="apidocSignatureSpan">(code, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onStatusCode = function (code, callback) {
+		if (typeof code == &#x27;function&#x27;) {
+			callback = code;
+			this.promises.push(function onGenericStatusCode(done, utils) {
+				done(null, callback(this.scraper.getStatusCode(), utils));
+			});
+		} else {
+			this.promises.push(function onStatusCode(done, utils) {
+				if (code === this.scraper.getStatusCode()) {
+					done(null, callback(utils));
+				} else {
+					done(null, utils.lastReturn);
+				}
+
+			});
+		}
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.request" id="apidoc.element.scraperjs.ScraperPromise.prototype.request">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>request
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (options) {
+		var that = this;
+		this.scraper.request(options, function(err) {
+			that._fire(err);
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
++ ```delay(time:number, callback:function(last:?, utils:Object))```, delays the execution of the chain by time (in milliseconds),
++ ```timeout(time:number, callback:function(last:?, utils:Object))```, executes the callback function after time (in milliseconds
+),
++ ```then(lastResult:?, callback:function(last:?, utils:Object))```, executes the callback after the last promise,
++ ```async(callback:function(last:?, done:function(result:?, err:?), utils))```, executes the callback, stopping the promise chain
+, resuming it when the ```done``` function is called. You can provide a result to be passed down the promise chain, or an error
+to trigger the catch promise,
++ ```catch(callback:function(error:Error, utils:Object))```, executes the callback when there was an error, errors block the execution
+ of the chain even if the promise was not defined,
++ ```done(callback:function(last:?, utils:Object))```, executes the callback at the end of the promise chain, this is always executed
+, even if there was an error,
++ ```get(url:string)```, makes a simple HTTP GET request to the url. This promise should be used only once per scraper.
++ ```request(options:Object)```, makes a (possibly) more complex HTTP request, scraperjs uses the [request](https://github.com/mikeal
+/request) module, and this method is a simple wrapper of ```request.<span class="apidocCodeKeywordSpan">request</span>()```. This
+ promise should be used only once per scraper.
++ ```scrape(scrapeFn:function(...?), callback:function(result:?, utils:Object)=, ...?)```, scrapes the page. It executes the scrapeFn
+ and passes it&#x27;s result to the callback. When using the StaticScraper, the scrapeFn receives a jQuery function that is used
+ to scrape the page. When using the DynamicScraper, the scrapeFn doesn&#x27;t receive anything and can only return a [JSON-serializable
+](https://github.com/sgentle/phantomjs-node/wiki#evaluating-pages) type. Optionally an arbitrary number of arguments can be passed
+ to the scraping function. The callback may be omitted, if so, the result of the scraping may be accessed with the ``` then ```
+promise or ``` utils.lastReturn ``` in the next promise.
+
+All callback functions receive as their last parameter a utils object, with it the parameters of an url from a router can be accessed
+. Also the chain can be stopped.
+```javascript
+DynamicScraper.create()
+	.get(&#x22;http://news.ycombinator.com&#x22;)
+	.then(function(_, utils) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.scrape" id="apidoc.element.scraperjs.ScraperPromise.prototype.scrape">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>scrape
+        <span class="apidocSignatureSpan">(scrapeFn, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scrape = function (scrapeFn, callback) {
+		var stackTrace = new Error().stack;
+
+		var extraArguments = Array.prototype.slice.call(arguments, 2);
+		callback = callback || function(result) {
+			return result;
+		};
+		this.promises.push(function scrape(done, utils) {
+			this.scraper.scrape(scrapeFn, function(err, result) {
+				if (err) {
+					done(err, undefined);
+				} else {
+					done(null, callback(result, utils));
+				}
+			}, extraArguments, stackTrace);
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.<span class="apidocCodeKeywordSpan">scrape</span>(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+	})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.then" id="apidoc.element.scraperjs.ScraperPromise.prototype.then">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>then
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">then = function (callback) {
+		this.promises.push(function then(done, utils) {
+			done(null, callback(utils.lastReturn, utils));
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.<span class="apidocCodeKeywordSpan">then</span>(function(news) {
+		console.log(news);
+	})
+```
+
+The ```scrape``` promise receives a function that will scrape the page and return the result, it only receives jQuery a parameter
+ to scrape the page. Still, very powerful. It uses [cheerio](https://github.com/cheeriojs/cheerio) to do the magic behind the scenes
+.
+
+### Dynamic Scraper
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.ScraperPromise.prototype.timeout" id="apidoc.element.scraperjs.ScraperPromise.prototype.timeout">
+        function <span class="apidocSignatureSpan">scraperjs.ScraperPromise.prototype.</span>timeout
+        <span class="apidocSignatureSpan">(time, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timeout = function (time, callback) {
+		this.promises.push(function timeout(done, utils) {
+			setTimeout(function() {
+				callback(utils);
+			}, time);
+			done(null, null);
+		});
+		return this;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.StaticScraper" id="apidoc.module.scraperjs.StaticScraper">module scraperjs.StaticScraper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.StaticScraper.StaticScraper" id="apidoc.element.scraperjs.StaticScraper.StaticScraper">
+        function <span class="apidocSignatureSpan">scraperjs.</span>StaticScraper
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StaticScraper = function () {
+	AbstractScraper.call(this);
+	<span class="apidocCodeCommentSpan">/**
+	 * jQuery.
+	 *
+	 * @type {!function}
+	 * @private
+	 */
+</span>	this.$ = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.StaticScraper.create" id="apidoc.element.scraperjs.StaticScraper.create">
+        function <span class="apidocSignatureSpan">scraperjs.StaticScraper.</span>create
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (url) {
+	return AbstractScraper.create(StaticScraper, url);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.<span class="apidocCodeKeywordSpan">create</span>(&#x27;https://news.ycombinator.com/&#x27;)
+	.scrape(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scraperjs.StaticScraper.prototype" id="apidoc.module.scraperjs.StaticScraper.prototype">module scraperjs.StaticScraper.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.StaticScraper.prototype.clone" id="apidoc.element.scraperjs.StaticScraper.prototype.clone">
+        function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {
+	return new StaticScraper();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.StaticScraper.prototype.close" id="apidoc.element.scraperjs.StaticScraper.prototype.close">
+        function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	grunt.registerTask(&#x27;serve&#x27;, &#x27;Starts express testing server&#x27;, function() {
+		server = testServer(grunt);
+	});
+
+	grunt.registerTask(&#x27;unserve&#x27;, function() {
+		if (server) {
+			server.<span class="apidocCodeKeywordSpan">close</span>();
+		}
+	});
+
+	grunt.registerTask(&#x27;serve-and-test&#x27;, [&#x27;serve&#x27;, &#x27;mochaTest:all&#x27;, &#x27;unserve&#x27;]);
+
+	grunt.registerTask(&#x27;coverage&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coverage&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+	grunt.registerTask(&#x27;coveralls&#x27;, [&#x27;clean&#x27;, &#x27;jshint&#x27;, &#x27;serve&#x27;, &#x27;exec:coveralls&#x27;, &#
+x27;exec:check-coverage&#x27;, &#x27;unserve&#x27;]);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.StaticScraper.prototype.loadBody" id="apidoc.element.scraperjs.StaticScraper.prototype.loadBody">
+        function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>loadBody
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadBody = function (done) {
+	this.$ = cheerio.load(this.body);
+	done();
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			if (error) {
+				callback(error);
+			} else {
+				that.response = response;
+				that.statusCode = response.statusCode;
+				that.body = body;
+				that.url = response.request.href;
+				that.<span class="apidocCodeKeywordSpan">loadBody</span>(function(err) {
+					callback(err);
+				});
+			}
+		});
+		return this;
+	},
+	/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scraperjs.StaticScraper.prototype.scrape" id="apidoc.element.scraperjs.StaticScraper.prototype.scrape">
+        function <span class="apidocSignatureSpan">scraperjs.StaticScraper.prototype.</span>scrape
+        <span class="apidocSignatureSpan">(scraperFn, callbackFn, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scrape = function (scraperFn, callbackFn, args) {
+	var result = null, err = null;
+	args = args || [];
+	args.unshift(this.$);
+	try {
+		result = scraperFn.apply(null, args);
+	} catch (e) {
+		err = e;
+	}
+	callbackFn(err, result);
+	return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Try to spot the differences.
+
+### Static Scraper
+
+```javascript
+var scraperjs = require(&#x27;scraperjs&#x27;);
+scraperjs.StaticScraper.create(&#x27;https://news.ycombinator.com/&#x27;)
+	.<span class="apidocCodeKeywordSpan">scrape</span>(function($) {
+		return $(&#x22;.title a&#x22;).map(function() {
+			return $(this).text();
+		}).get();
+	})
+	.then(function(news) {
+		console.log(news);
+	})
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
